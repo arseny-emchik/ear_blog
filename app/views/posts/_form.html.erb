@@ -1,0 +1,23 @@
+<script src="/ckeditor/ckeditor.js"></script>
+<script src="/ckeditor/adapters/jquery.js"></script>
+
+<fieldset>
+  <legend>Изменить</legend>
+
+  <div class="form-inputs">
+
+    <%= f.input :title, label: 'Заголовок :', :as => :text, input_html: {rows:2,  style:'width:90%'} %>
+    <%= f.input :author, label: 'Автор :', :as => :text, input_html: {rows:2,  style:'width:90%'} %>
+    <%= f.input :brief_text, label: 'Кратко :', input_html: {rows:4,  style:'width:90%'} %>
+    <%= f.input :text, label: 'Текст :' %>
+    <%= f.input :visible, label: 'Виден?:'%>
+
+  </div>
+
+</fieldset>
+
+<script>
+    $(document).ready(function () {
+        $('#post_text').ckeditor();
+    });
+</script>

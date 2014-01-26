@@ -1,0 +1,13 @@
+<%= simple_form_for @post, url: posts_path , method: 'post' do |f| %>
+
+    <%= render partial: 'posts/form', locals: {f: f} %>
+
+    <div class='container'>
+      <%= link_to posts_path, class: "btn" do
+        raw '<i class="icon-backward"></i> Назад'
+      end
+      %>
+      <%= f.submit 'Сохранить', class: "btn btn-primary dynamic-show-data" %>
+    </div>
+
+<% end %>
