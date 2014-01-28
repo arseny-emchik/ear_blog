@@ -48,3 +48,4 @@ end
 gem 'devise'
 gem 'bootstrap-sass-rails'
 gem 'simple_form'
+gem 'activerecord-session_store'

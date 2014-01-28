@@ -1,1 +1,11 @@
+<% @posts.each do |post|
+  #next unless info.visible  %>
+    <header>
+      <h1>
+        <%= link_to(post.title, post_path(post)) %>
+      </h1>
+      <aside><%= post.time.to_s(:dmy_hm) %></aside>
+    </header>
+<% end %>
+
 <%= link_to 'New post', new_posts_path %>

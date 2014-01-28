@@ -1,5 +1,5 @@
 class PostsController   < ApplicationController
- # layout 'main_view'
+ layout 'main_view'
 
 
   MAX_POSTS = 7
@@ -11,7 +11,7 @@ class PostsController   < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    render layout: 'layouts/post'
+    #render layout: 'layouts/post'
   end
 # ======================
 
@@ -32,6 +32,7 @@ class PostsController   < ApplicationController
 # ======================
   def new
     @post = Post.new
+    @right_trail_content = true
   end
 
   def create
