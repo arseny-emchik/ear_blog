@@ -1,11 +1,33 @@
-<% @posts.each do |post|
-  #next unless info.visible  %>
-    <header>
-      <h1>
-        <%= link_to(post.title, post_path(post)) %>
-      </h1>
-      <aside><%= post.time.to_s(:dmy_hm) %></aside>
-    </header>
+
+<% @posts.each do |post| %>
+
+    <article class="post-holder">
+      <div>
+        <!-- <div class="date"> <span class="day">14</span> <span class="month">July</span> </div>   -->
+        <h2 class="entry-title fleft"><%= link_to(post.title, post_path(post)) %></h2>
+
+        <div class="post-meta">
+          <div class="fleft"><i class="icon-user"></i> <a href="#">owltemplates / </a>
+            <a> <%= post.created_at.to_s(:ru_datetime) %> </a></div>
+        </div>
+        <!--.post-meta-->
+      </div>
+      <figure class="ident-bot-2"><a class="fixed-img" href="#"><img src="images/blog/post1.jpg"></a></figure>
+      <p class="ident-bot-2"><%= post.brief_text %></p>
+      <a class="button1" href="blog-single.html">Continue Reading</a>
+
+      <% if can? :edit, post %>
+          <%= link_to('Edit', edit_post_path(post), class: 'btn btn-default') %>
+      <% end %>
+      <% if can? :delete, post %>
+          <%= link_to('Del', post_path(post), method: :delete, class: 'btn btn-default') %>
+      <% end %>
+    </article>
+    <div class="clear"></div>
+
 <% end %>
 
-<%= link_to 'New post', new_posts_path %>
+
+<% if can? :creat, @post %>
+    <%= link_to 'New post', new_post_path %>
+<% end %>

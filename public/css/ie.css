@@ -1,0 +1,16 @@
+
+*+html { overflow:auto; }
+
+.button1, .camera_loader { behavior:url(js/PIE.htc); }
+
+.camera_wrap .camera_pag .camera_pag_ul li { width:32px; height:24px; padding-top:8px; }
+
+.magnifier span { display: none; background: url(../images/magnifying-glass.png) center center no-repeat; }
+
+.magnifier:hover span { display: block; }
+
+.camera_wrap .camera_pag .camera_pag_ul li { background:url(../images/pag-li.png) no-repeat 0 0; }
+
+.camera_wrap .camera_pag .camera_pag_ul li:hover, .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent { background:url(../images/pag-li-hov.png) no-repeat 0 0; }
+
+.p10 { margin-left:0; }

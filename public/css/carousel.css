@@ -1,0 +1,31 @@
+
+.carousel1 li { float: left; margin: 0 10px; }
+
+.carousel-div { margin: 0 -9px; position: relative; overflow:hidden !important; }
+
+.carousel1 { cursor: auto !important; }
+
+.carousel1 li p { margin-bottom: 17px; }
+
+.page1-img1 { margin-top:50px; }
+
+.prev { background: url(../images/prev.png) 0 0 no-repeat; display: block; width: 41px; height: 46px; border-radius:20px 0 0 20px; position:relative; float:left; margin-bottom:10px; z-index:99; }
+
+.caroufredsel_wrapper { z-index:9; }
+
+.next { background: url(../images/next.png) 0 0 no-repeat; display: block; width: 41px; height: 46px; margin-bottom:10px; z-index:99; float:left; border-radius:0 20px 20px 0; position:relative; }
+
+.next:hover, .prev:hover { background-position: 0 -56px; }
+ @media only screen and (max-width: 767px) {
+ .carousel1 li {
+ margin-left: 0;
+}
+ .carousel-div {
+ margin: 0 !important;
+}
+}
+ @media only screen and (max-width: 479px) {
+ .carousel1 li {
+ margin-left: 0;
+}
+}

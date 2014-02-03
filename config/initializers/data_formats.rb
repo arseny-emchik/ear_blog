@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:ru_datetime] = "%Y.%m.%d в %k:%M:%S" # ars

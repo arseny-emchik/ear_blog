@@ -1,35 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <title>ArsBlog</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <title>Emchik.by</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="description" content="Your description">
+  <meta name="keywords" content="Your keywords">
+  <meta name="author" content="Your name">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="/css/camera-slider.css">
+  <link rel="stylesheet" href="/css/flexslider.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/carousel.css">
+  <link rel="stylesheet" href="/css/touchTouch.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/accordion.js"></script>
+  <script src="/js/superfish.js"></script>
+  <script src="/js/jquery.hoverIntent.minified.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <script src="/js/camera.js"></script>
+  <script src="/js/jquery.flexslider.js"></script>
+  <script src="/js/jquery.mobilemenu.js"></script>
+  <script src="/js/jquery.carouFredSel-6.1.0-packed.js"></script>
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <script type="text/javascript" src="/js/jquery.mobile.customized.min.js"></script>
+  <!--<![endif]-->
+  <script type="text/javascript" src="/js/jquery.touchSwipe.min.js"></script>
+  <script type="text/javascript" src="/js/touchTouch.jquery.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script>
+      $(window).load(function () {
+          $('.flexslider').flexslider({
+              animation: "slide",
+              animationLoop: true,
+              itemWidth: 140,
+              itemMargin: 20,
+              start: function (slider) {
+                  $('body').removeClass('loading');
+              }
+          });
+      });
+
+      $(window).load(function () {
+          jQuery('.magnifier').touchTouch();
+      });
+  </script>
+  <!--[if lt IE 8]>
+  <div style=' clear: both; text-align:center; position: relative;'>
+  </div>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="/js/html5.js"></script>
+  <link rel="stylesheet" href="/css/ie.css">
+  <![endif]-->
 </head>
 
 <body>
 
 <%= render partial: 'layouts/header' %>
 
-<div class="container">
 
-  <div class="row">
-    <div class="col-md-7">
-      <%= yield %>
-    </div>
-    <div class="col-md-5">
-      <%= render partial: 'layouts/right_trail' if @right_trail_content %>
+<div class="row">
+  <div class="main-wrapper header-inner-title">
+    <div class="container_12">
+      <article class="grid_8 ">
+        <h2>Blog</h2>
 
+        <div class="orange-top-drop"></div>
+      </article>
     </div>
+    <div class="shadowdrop"></div>
   </div>
+</div>
 
 
-  <div class="row">
-    <div class="col-md-12">
-      <hr>
+<div class="main-wrapper main-wrapper-shadow">
+  <section id="content">
+    <div class="container_12">
+      <div class="wrapper">
+        <article class="grid_12">
+          <div class="post-border-right">
+            <%= yield %>
+          </div>
+        </article>
+        <!--<article class="grid_4 fright">-->
+          <!--RIGHT-->
+        <!--</article>-->
+      </div>
     </div>
-  </div>
+  </section>
 
+  <%= render partial: 'layouts/right_trail' if @right_trail_content %>
 </div>
 
 </body>
+</html>

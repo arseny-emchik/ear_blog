@@ -1,8 +1,13 @@
-class PostsController   < ApplicationController
- layout 'main_view'
+class PostsController < ApplicationController
+
+  #skip_authorization_check :only => [:index, :show]
+
+  load_and_authorize_resource
+
+  layout 'main_view'
 
 
-  MAX_POSTS = 7
+  MAX_POSTS = 10
 
 # ======================
   def index
@@ -20,11 +25,20 @@ class PostsController   < ApplicationController
 # ======================
   def edit
     @post = Post.find(params[:id])
-    render layout: 'layouts/post'
+    #render layout: 'layouts/post'
   end
 
   def update
     @post = Post.find(params[:id])
+    @post.attributes = post_params
+
+    if @post.save
+      redirect_to posts_path, notice: 'Post was successfully created.'
+    else
+      render action: 'edit'
+    end
+
+
   end
 # ======================
 
@@ -37,17 +51,26 @@ class PostsController   < ApplicationController
 
   def create
 
-    #@post = Post.new(params[:post])
     @post = Post.new(post_params)
 
     if @post.save
-      render action: 'new'
-      #redirect_to
+      redirect_to posts_url, notice: 'Post was successfully created.'
     else
       render action: 'new'
     end
   end
 # ======================
+
+# ======================
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_url, notice: 'Info was successfully destroyed.'
+  end
+# ======================
+
+
 
   private
 

@@ -1,0 +1,21 @@
+.logo {
+    background: url("../images/logo.png") no-repeat scroll 0 0 transparent;
+}
+
+.orange-top-drop { background: url("../images/pointer-down.png") no-repeat scroll center top transparent; }
+
+.port-corner-top { background: url("../images/pointer-up.png") repeat-x scroll 0 0 transparent; }
+
+.header-inner-title, .icon-text span, .button1:hover, .port-title, #filter a:hover, .post-holder .date .month, .tags a:link, .tags a:visited, .parent a.reply:link, .parent a.reply:visited, .layout-box:hover { background: none repeat scroll 0 0 #D73604; }
+
+.layout-box:hover { border: 1px solid #B71610; }
+
+.content2, .sf-menu a:hover, .sf-menu ul a:hover, .sf-menu ul li.sfHover > a, .header-title h2 span, .link2:hover, .list1 a:hover, h2 span, h2 span, .link-name, ul.list-link > li a:hover, #treecontrol a, .faq-accordion .qa, .faq-accordion .qa, .faq_list span.marker, .faq_list dt, .tweets ul li a { color: #D73604; }
+
+.price-column-featured h4 { background: none repeat scroll 0 0 #D73604; }
+
+.price-column-first h4, .price-column-last h4 { background-color: #FF6634; }
+
+.price-column-even h4 { background-color: #FF7644; }
+
+.price-column .first { background-color: #FFE9D8; }

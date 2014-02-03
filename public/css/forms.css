@@ -1,0 +1,148 @@
+/***** Contact form *****/
+																								/***** Contact form *****/
+#form1 {
+	position:relative;
+	vertical-align:top;
+	z-index:1;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-top: 6px;
+}
+
+#form1 fieldset {
+border:none;
+padding:0;
+}
+
+#form1 label {
+    display: block;
+    min-height: 62px;
+    position: relative;
+    width: 301px;
+}
+
+#form1 label.message {
+    height: 222px;
+    width: 460px;
+}
+
+#form1 input {
+	outline: none;
+	border:1px solid #e9e9e9;
+	color: #909090;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+	padding: 12px 14px;
+    width: 301px;
+	display:inline-block;
+}
+#form1 .area .error { float:none;}
+#form1 textarea {	
+	height:192px;
+	margin:0;
+	width:461px;	
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+	resize:none;
+	outline: none;
+	border:1px solid #e9e9e9;
+	padding: 12px 14px;
+	overflow:auto;
+	color:#909090;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	display:block;
+}
+#form1 a {cursor:pointer;}
+#form1 .success {
+    background: none repeat scroll 0 0 #f6f6f5;
+    border: 1px solid #333333;
+    display: none;
+    height: 166px;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    position: absolute;
+    width: 301px;
+    z-index: 1;
+}
+
+.p27 {
+	margin-right:30px;
+}
+
+#form1 .success .success_txt {
+    color: #000;
+    position: relative;
+    text-align: center;
+    top: 34%;
+}
+#form1 .error,
+#form1 .empty {
+	color:#f00;
+	font-size:10px;
+	line-height:1.25em;
+	display:none;
+	font-family:Arial, Helvetica, sans-serif;
+	overflow:hidden;
+	position:absolute;
+	right:3px;
+	top:2px;
+}
+#form1 .message .error,
+#form1 .message .empty  {
+	left: 4px;
+	right:auto;
+    top: 178px;
+}
+
+.link-form {
+	float: right;
+}
+
+
+@media only screen and (max-width: 995px) {
+	#form1 input, #form1 textarea{width:100%;}
+	#form1 label.message {
+    width: 100%;
+	height:222px;
+}
+#form1 label {
+    width: 100%;
+}
+
+#form1 .success {
+    width: 100%;	
+}
+}
+
+ @media only screen and (max-width: 767px) {
+	 #form1 input, #form1 textarea{width:100%;}
+	
+#form1 label {
+    width: 100%;
+}
+
+#form1 .success {
+    width: 100%;	
+}
+	 }
+ 
+
+
+
+@media only screen and (max-width: 479px){
+
+	
+
+}
