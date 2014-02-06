@@ -8,6 +8,18 @@
           <ul class="sf-menu responsive-menu">
             <li><span></span><a href="index.html"><i class="icon-home"></i> home</a></li>
             <li><span></span><a href="about.html"><i class="icon-user"></i> About Us</a></li>
+            <% if user_signed_in? %>
+                <li>   <span></span>
+                  <form method = "post">
+                  <%= link_to('Logout', destroy_user_session_path)%>
+                    </form>
+                  <!--<a method = 'delete' href="/logout" rel="nofollow">Logout</a>-->
+                </li>
+            <% else %>
+                <li>   <span></span>
+                  <%= link_to('Login', new_user_session_path)  %>
+                </li>
+            <% end %>
           </ul>
         </nav>
       </div>

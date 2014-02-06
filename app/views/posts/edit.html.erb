@@ -2,12 +2,15 @@
 
     <%= render partial: 'posts/form', locals: {f: f} %>
 
-    <div class='container'>
-      <%= link_to posts_path, class: "btn" do
-        raw '<i class="icon-backward"></i> Назад'
-      end
-      %>
-      <%= f.submit 'Сохранить', class: "btn btn-primary dynamic-show-data" %>
-    </div>
+    <%= f.submit 'Update', class: 'button1' %>
+
+    <hr>
+
+    <h2><%= link_to post_path, class: "btn" do
+      raw '<i class="icon-backward"></i>Back'
+    end
+    %></h2>
+
 
 <% end %>
+

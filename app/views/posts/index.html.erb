@@ -3,7 +3,7 @@
 
     <article class="post-holder">
       <div>
-        <!-- <div class="date"> <span class="day">14</span> <span class="month">July</span> </div>   -->
+
         <h2 class="entry-title fleft"><%= link_to(post.title, post_path(post)) %></h2>
 
         <div class="post-meta">
@@ -13,14 +13,14 @@
         <!--.post-meta-->
       </div>
       <figure class="ident-bot-2"><a class="fixed-img" href="#"><img src="images/blog/post1.jpg"></a></figure>
-      <p class="ident-bot-2"><%= post.brief_text %></p>
+      <p class="ident-bot-2"><%= sanitize post.brief_text %></p>
       <a class="button1" href="blog-single.html">Continue Reading</a>
 
       <% if can? :edit, post %>
-          <%= link_to('Edit', edit_post_path(post), class: 'btn btn-default') %>
+          <%= link_to('Edit', edit_post_path(post), class: 'button1') %>
       <% end %>
       <% if can? :delete, post %>
-          <%= link_to('Del', post_path(post), method: :delete, class: 'btn btn-default') %>
+          <%= link_to('Del', post_path(post), method: :delete, class: 'button1') %>
       <% end %>
     </article>
     <div class="clear"></div>

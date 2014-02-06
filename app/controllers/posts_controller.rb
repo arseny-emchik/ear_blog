@@ -2,9 +2,11 @@ class PostsController < ApplicationController
 
   #skip_authorization_check :only => [:index, :show]
 
-  load_and_authorize_resource
-
   layout 'main_view'
+
+  load_and_authorize_resource :except => [:show, :index]
+  skip_load_resource :only => [:create]
+
 
 
   MAX_POSTS = 10
@@ -75,7 +77,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit('author', 'title', 'brief_text', 'text', 'visible')
+    params.require(:post).permit(:author, :title, :brief_text, :text, :visible)
   end
 
 end

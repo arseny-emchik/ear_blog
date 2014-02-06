@@ -40,7 +40,7 @@ EarBlog::Application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with concerns:
+  # Example resource route with concerns:                                                                      hehe
   #   concern :toggleable do
   #     post 'toggle'
   #   end
