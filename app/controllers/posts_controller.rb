@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
-  #skip_authorization_check :only => [:index, :show]
-
+  Russian.init_i18n
   layout 'main_view'
 
   load_and_authorize_resource :except => [:show, :index]
@@ -21,8 +20,6 @@ class PostsController < ApplicationController
     #render layout: 'layouts/post'
   end
 # ======================
-
-
 
 # ======================
   def edit

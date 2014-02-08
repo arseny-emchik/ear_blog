@@ -1,7 +1,19 @@
-<h4>
-  <%=@post.brief_text + ' ' + @post.text %>
-</h4>
+<article class="post-holder">
+  <div>
 
+    <h2 class="entry-title fleft"><%= @post.title %></h2>
 
+    <div class="post-meta">
+      <div class="fleft"><i class="icon-user"></i> <a href="#"> <%= @post.author %> / </a>
+        <a> <%= @post.created_at.to_s(:ru_datetime) %> </a></div>
+    </div>
+    <!--.post-meta-->
+  </div>
+  <figure class="ident-bot-2"><a class="fixed-img" href="#"><img src="/images/blog/post1.jpg"></a></figure>
+  <p class="ident-bot-2"><%= sanitize @post.brief_text %></p>
+  <p class="ident-bot-2"><%= sanitize @post.text %></p>
+
+</article>
+<div class="clear"></div>
 
 

@@ -50,4 +50,6 @@ gem 'bootstrap-sass-rails'
 gem 'simple_form'
 gem 'activerecord-session_store'
 gem 'devise'
-gem "cancan"
+gem 'cancan'
+gem 'paperclip'
+gem 'russian', '~> 0.6.0'

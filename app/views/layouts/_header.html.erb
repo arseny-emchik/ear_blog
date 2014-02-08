@@ -2,22 +2,23 @@
   <!--==============================header=================================-->
   <header>
     <div class="inner-block">
-      <h1><a class="logo" href="index.html">Emchik.by</a></h1>
+      <h1><%= link_to('Emchik.by', posts_path, class: 'logo') %></h1>
       <div class="inner-block">
         <nav>
           <ul class="sf-menu responsive-menu">
-            <li><span></span><a href="index.html"><i class="icon-home"></i> home</a></li>
-            <li><span></span><a href="about.html"><i class="icon-user"></i> About Us</a></li>
+            <li class = 'current'><span></span><a href= '<% posts_path %>'><i class="icon-comment-alt"></i> blog</a>
+            </li>
+            <li><span></span><a href= '<% posts_path %>'><i class="icon-star-empty"></i> labs</a>
+            </li>
+            <li><span></span><a href= '<% posts_path %>'><i class="icon-th"></i> archive</a>
+            </li>
+            <li><span></span><a href="about.html"><i class="icon-user"></i> About</a></li>
             <% if user_signed_in? %>
                 <li>   <span></span>
                   <form method = "post">
-                  <%= link_to('Logout', destroy_user_session_path)%>
+                  <%= link_to('Logout', destroy_user_session_path, :method => 'delete')%>
                     </form>
                   <!--<a method = 'delete' href="/logout" rel="nofollow">Logout</a>-->
-                </li>
-            <% else %>
-                <li>   <span></span>
-                  <%= link_to('Login', new_user_session_path)  %>
                 </li>
             <% end %>
           </ul>
@@ -29,3 +30,4 @@
   </header>
   <div class="header-title-blank main-wrapper-shadow"></div>
 </div>
+
