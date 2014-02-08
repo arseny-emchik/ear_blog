@@ -13,6 +13,8 @@
       <%= f.input :brief_text, label: 'brief_text :', input_html: {class: 'ckeditor'} %>
       <%= f.input :text, label: 'text :', input_html: {class: 'ckeditor'} %>
       <%= f.input :visible, label: 'visible?' %>
+      <%= f.input :category, label: 'category', :as => :radio_buttons, collection: [[:post, :p], [:lab, :l]]  %>
+
     </h2>
 
   </div>

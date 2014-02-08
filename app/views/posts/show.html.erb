@@ -4,8 +4,9 @@
     <h2 class="entry-title fleft"><%= @post.title %></h2>
 
     <div class="post-meta">
-      <div class="fleft"><i class="icon-user"></i> <a href="#"> <%= @post.author %> / </a>
-        <a> <%= @post.created_at.to_s(:ru_datetime) %> </a></div>
+      <div class="fleft"><i class="icon-user"></i><a href="#">автор: <%= @post.author %> </a> /
+        <a><%= Russian.strftime(@post.created_at, '%A') %>,
+          <%= Russian.strftime(@post.created_at, '%d %B %Y') %> </a></div>
     </div>
     <!--.post-meta-->
   </div>

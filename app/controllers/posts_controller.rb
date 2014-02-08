@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   Russian.init_i18n
+
   layout 'main_view'
 
   load_and_authorize_resource :except => [:show, :index]
@@ -12,7 +13,8 @@ class PostsController < ApplicationController
 
 # ======================
   def index
-    @posts = Post.limit(MAX_POSTS)
+    @posts = Post.blog.where(:visible => true).limit(MAX_POSTS)
+    @post_draft = Post.blog.where(:visible => false)
   end
 
   def show
@@ -36,8 +38,6 @@ class PostsController < ApplicationController
     else
       render action: 'edit'
     end
-
-
   end
 # ======================
 
@@ -61,7 +61,6 @@ class PostsController < ApplicationController
 # ======================
 
 # ======================
-
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -70,11 +69,23 @@ class PostsController < ApplicationController
 # ======================
 
 
+  def labs
+    @labs = Post.lab.where(:visible => true).limit(MAX_POSTS)
+    @labs_draft = Post.labs.where(:visible => false)
+  end
+
+
+  def archive
+    @list_posts = Post.blog.all
+    @list_labs = Post.labs.all
+  end
+
+
 
   private
 
   def post_params
-    params.require(:post).permit(:author, :title, :brief_text, :text, :visible)
+    params.require(:post).permit(:author, :title, :brief_text, :text, :visible, :category)
   end
 
 end

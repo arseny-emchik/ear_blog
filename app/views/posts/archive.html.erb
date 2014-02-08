@@ -1,0 +1,40 @@
+<h4>Архив постов</h4>
+<h2>
+  <ul class="list-style">
+    <% @list_posts.each do |post| %>
+        <li class="circle-list">
+          <div class="container_12">
+            <div class="grid_3">
+              <%= Russian.strftime(post.created_at, '%d %B %Y') %>
+            </div>
+
+            <div class="grid_9">
+              <%= link_to(post.title, post_path(post)) %>
+            </div>
+          </div>
+        </li>
+
+    <% end %>
+  </ul>
+</h2>
+
+<h4>Архив лаб</h4>
+
+<h2>
+  <ul class="list-style">
+    <% @list_labs.each do |lab| %>
+        <li class="circle-list">
+          <div class="container_12">
+            <div class="grid_3">
+              <%= Russian.strftime(lab.created_at, '%d %B %Y') %>
+            </div>
+
+            <div class="grid_9">
+              <%= link_to(lab.title, post_path(lab)) %>
+            </div>
+          </div>
+        </li>
+
+    <% end %>
+  </ul>
+</h2>
