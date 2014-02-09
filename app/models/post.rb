@@ -8,5 +8,6 @@ class Post < ActiveRecord::Base
 
   POST = 'p'.freeze
   LAB = 'l'.freeze
+  AUTHOR = 'ars'.freeze
 
 end

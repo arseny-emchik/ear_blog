@@ -6,11 +6,11 @@
       <div class="inner-block">
         <nav>
           <ul class="sf-menu responsive-menu">
-            <li class = 'current'><span></span><a href= '<% posts_path %>'><i class="icon-comment-alt"></i> blog</a>
+            <li <%= 'class = "current"'.html_safe if @current_tab ==:blog %>><span></span><a href="http://localhost:3000"><i class="icon-comment-alt"></i> blog</a>
             </li>
-            <li><span></span><a href= '<% posts_path %>'><i class="icon-star-empty"></i> labs</a>
+            <li <%= 'class = "current"'.html_safe if @current_tab == :labs %>><span></span><a href= 'http://localhost:3000/labs'><i class="icon-star-empty"></i> labs</a>
             </li>
-            <li><span></span><a href= '<% archive_path %>'><i class="icon-th"></i> archive</a>
+            <li><span></span><a href= 'http://localhost:3000/archive'><i class="icon-th"></i> archive</a>
             </li>
             <li><span></span><a href="<%  archive_path %>"><i class="icon-user"></i> About</a></li>
             <% if user_signed_in? %>
@@ -31,3 +31,17 @@
   <div class="header-title-blank main-wrapper-shadow"></div>
 </div>
 
+<script>
+  function change_current()
+  {
+      //alert('2');
+      //$('header li').removeClass('current');
+      $(this).addClass('current');
+  }
+
+  $(function(){
+
+      $('header li').click(change_current);
+  })
+
+</script>

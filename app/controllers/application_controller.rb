@@ -3,7 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  #before_filter :authenticate_user!
-  #check_authorization
+  Russian.init_i18n
+
+  layout 'main_view'
+
+  before_filter :initialize_for_layout
+
+  private
+
+  def initialize_for_layout
+
+  end
 
 end
