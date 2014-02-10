@@ -32,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: ars_blog_production
+  database: ars_blog
   pool: 5
   username: root
   password: '1'
