@@ -21,7 +21,6 @@
         </div>
         <!--.post-meta-->
       </div>
-      <figure class="ident-bot-2"><a class="fixed-img" href="#"><img src="images/blog/post1.jpg"></a></figure>
       <p class="ident-bot-2"><%= sanitize post.brief_text %></p>
       <%= link_to('Читать далее', post_path(post), class: 'button1') %>
 
@@ -29,7 +28,7 @@
           <%= link_to('Edit', edit_post_path(post), class: 'button1') %>
       <% end %>
       <% if can? :delete, post %>
-          <%= link_to('Del', post_path(post), method: :delete, class: 'button1') %>
+          <%= link_to('Del', post_path(post), method: :delete, class: 'button1', confirm: 'Are you sure?') %>
       <% end %>
     </article>
     <div class="clear"></div>
@@ -44,7 +43,7 @@
     <h2>Черновики</h2>
 
 
-    <% @post_draft.each do |post| %>
+    <% @post_drafts.each do |post| %>
 
         <article class="post-holder">
           <div>
@@ -61,7 +60,7 @@
             </div>
             <!--.post-meta-->
           </div>
-          <figure class="ident-bot-2"><a class="fixed-img" href="#"><img src="images/blog/post1.jpg"></a></figure>
+
           <p class="ident-bot-2"><%= sanitize post.brief_text %></p>
           <%= link_to('Читать далее', post_path(post), class: 'button1') %>
 

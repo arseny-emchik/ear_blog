@@ -1,21 +1,20 @@
 class PostsController < ApplicationController
 
-  #load_and_authorize_resource :except => [:show, :index, :archive]
-  #skip_load_resource :only => [:create, :upload_image]
-
-
+  load_and_authorize_resource :except => [:show, :index]
+  skip_load_resource :only => [:create, :upload_image]
 
   MAX_POSTS = 10
 
 # ======================
   def index
     @posts = Post.blog.where(:visible => true).limit(MAX_POSTS)
-    @post_draft = Post.blog.where(:visible => false)
+    @post_drafts = Post.blog.where(:visible => false)
   end
 
   def show
     @post = Post.find(params[:id])
   end
+
 # ======================
 
 # ======================
@@ -28,9 +27,7 @@ class PostsController < ApplicationController
     @post.attributes = post_params
     @post.author ||= Post::AUTHOR
 
-    if @post.visible? and  @post.publication_time.nil?
-      @post.publication_time = Time.now
-    end
+    @post.publication_time = Time.now if @post.visible? && @post.publication_time.nil?
 
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully update.'
@@ -38,6 +35,7 @@ class PostsController < ApplicationController
       render action: 'edit'
     end
   end
+
 # ======================
 
 
@@ -48,13 +46,12 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @post = Post.new(post_params)
     @post.author ||= Post::AUTHOR
 
-    if @post.visible? and  @post.publication_time.nil?
-      @post.publication_time = Time.now
-    end
+
+    @post.publication_time = Time.now if @post.visible? and @post.publication_time.nil?
+
 
     if @post.save
       redirect_to posts_url, notice: 'Post was successfully created.'
@@ -72,28 +69,19 @@ class PostsController < ApplicationController
   end
 # ======================
 
-# ======================
-  def archive
-    @current_tab = :labs
-
-    @list_posts = Post.blog.all
-    @list_labs = Post.labs.all
-  end
-# ======================
 
   def upload_image
     @func_num = params["CKEditorFuncNum"]
     @ck_editor = params["CKEditor"]
     if params.include?(:upload)
       data = params.delete(:upload)
-      name =  data.original_filename
+      name = data.original_filename
       directory = "public/images"
       # create the file path
       path = File.join(directory, name)
       # write the file
       File.open(path, "wb") { |f| f.write(data.read) }
 
-      #@image = Image.create({:data => data}) if data.present?
       @image_url = "/images/#{name}"
     end
     render :layout => false
@@ -104,6 +92,7 @@ class PostsController < ApplicationController
 
   def initialize_for_layout
     @current_tab = :blog
+    @current_title = :blog
   end
 
   def post_params

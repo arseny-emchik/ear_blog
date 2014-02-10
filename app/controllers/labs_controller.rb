@@ -4,12 +4,13 @@ class LabsController < ApplicationController
 
   def index
     @labs = Post.labs.where(:visible => true).limit(MAX_LABS)
-    @labs_draft = Post.labs.where(:visible => false)
+    @lab_drafts = Post.labs.where(:visible => false)
   end
 
   private
 
   def initialize_for_layout
     @current_tab = :labs
+    @current_title = :labs
   end
 end

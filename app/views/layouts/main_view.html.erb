@@ -70,14 +70,13 @@
   <div class="main-wrapper header-inner-title">
     <div class="container_12">
       <article class="grid_8 ">
-        <h2>Blog</h2>
+        <h2><%= @current_title.blank? ? 'single post' : @current_title %></h2>
         <div class="orange-top-drop"></div>
       </article>
     </div>
     <div class="shadowdrop"></div>
   </div>
 </div>
-
 
 <div class="main-wrapper main-wrapper-shadow">
   <section id="content">

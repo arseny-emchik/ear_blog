@@ -61,8 +61,8 @@ EarBlog::Application.routes.draw do
 
   devise_for :users, :path => "", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
 
-  get '/archive' , to: 'posts#archive'
   get '/labs' , to: 'labs#index'
+  get '/archive' , to: 'archive#index'
   post '/posts/upload_image', to: 'posts#upload_image'
 
 

@@ -21,7 +21,7 @@
         </div>
         <!--.post-meta-->
       </div>
-      <figure class="ident-bot-2"><a class="fixed-img" href="#"><img src="images/blog/post1.jpg"></a></figure>
+
       <p class="ident-bot-2"><%= sanitize post.brief_text %></p>
       <%= link_to('Читать далее', post_path(post), class: 'button1') %>
 
@@ -44,7 +44,7 @@
     <h2>Черновики</h2>
 
 
-    <% @labs_draft.each do |post| %>
+    <% @lab_drafts.each do |post| %>
 
         <article class="post-holder">
           <div>
