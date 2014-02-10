@@ -79,5 +79,5 @@ EarBlog::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.serve_static_assets = true
   config.assets.compile = true
-  config.assets.enabled = false
+  config.assets.enabled = true
 end
