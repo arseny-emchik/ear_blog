@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   MAX_POSTS = 10
 
-# ======================
   def index
     @posts = Post.blog.where(:visible => true).limit(MAX_POSTS)
     @post_drafts = Post.blog.where(:visible => false)
@@ -15,9 +14,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-# ======================
-
-# ======================
   def edit
     @post = Post.find(params[:id])
   end
@@ -36,10 +32,6 @@ class PostsController < ApplicationController
     end
   end
 
-# ======================
-
-
-# ======================
   def new
     @post = Post.new(author: Post::AUTHOR)
     @right_trail_content = true # for test
@@ -59,16 +51,12 @@ class PostsController < ApplicationController
       render action: 'new'
     end
   end
-# ======================
 
-# ======================
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
-# ======================
-
 
   def upload_image
     @func_num = params["CKEditorFuncNum"]
