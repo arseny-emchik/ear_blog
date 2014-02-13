@@ -32,7 +32,6 @@ class PostsController < ApplicationController
     end
   end
 
-
   def new
     @post = Post.new(author: Post::AUTHOR)
     @right_trail_content = true # for test
