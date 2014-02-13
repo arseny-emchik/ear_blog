@@ -1,5 +1,5 @@
 == README
 
-Ruby 2.0; Rails 4.0.2; BD MySql
+Ruby 2.0.0-p353; Rails 4.0.2; BD MySql
 
 <tt>rake doc:app</tt>.
