@@ -1,0 +1,38 @@
+<!--<div style="text-align: center; vertical-align: middle">aaaa</div>-->
+
+<!--<div style ='height: 100%; text-align: center; vertical-align: middle'>-->
+
+  <!--<div style = 'vertical-align: middle'>-->
+
+    <!--dfjksdjfklj-->
+  <!--</div>-->
+
+
+<!--</div>-->
+
+  <div class="panel panel-default" style="width: 30%; margin: 5px auto">
+    <div class="panel-body">
+
+      <h2>Sign in</h2>
+
+      <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+
+          <div class="form-inputs">
+            <%= f.input :email, :required => false, :autofocus => true %>
+            <%= f.input :password, :required => false %>
+            <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign in" %>
+          </div>
+
+
+      <% end %>
+
+      <!--<%= render "devise/shared/links" %>-->
+    </div>
+  </div>
+
+
